@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Глэмпинги Алматы</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #333;
+      text-align: center;
+    }
+    header {
+      background: #2c3e50;
+      color: #fff;
+      padding: 20px;
+    }
+    header h1 {
+      margin: 0;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav button {
+      margin: 0 5px;
+      padding: 5px 10px;
+      border: none;
+      cursor: pointer;
+      background: #3498db;
+      color: #fff;
+      border-radius: 4px;
+      transition: 0.3s;
+    }
+    nav button:hover {
+      background: #2980b9;
+    }
+    .hero {
+      position: relative;
+    }
+    .hero img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .hero h1 {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 2.5rem;
+      background: rgba(0,0,0,0.5);
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+    .hero button {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 15px 25px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 8px;
+      background: #e74c3c;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .hero button:hover {
+      background: #c0392b;
+    }
+    .gallery {
+      padding: 40px 20px;
+    }
+    .gallery h2 {
+      margin-bottom: 20px;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+    .gallery-grid img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      background: #2c3e50;
+      color: #fff;
+      padding: 20px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="title">Глэмпинги Алматы</h1>
+    <nav>
+      <button onclick="setLang('ru')">Рус</button>
+      <button onclick="setLang('kk')">Қаз</button>
+      <button onclick="setLang('en')">Eng</button>
+    </nav>
+  </header>
+
+  <!-- Главная картинка -->
+  <section class="hero">
+    <img src="hero.jpg" alt="Hero Image">
+    <h1 id="hero-text">Добро пожаловать!</h1>
+    <button onclick="window.location.href='https://wa.me/77001234567'">
+      <span id="book-btn">Забронировать сейчас</span>
+    </button>
+  </section>
+
+  <!-- Галерея -->
+  <section class="gallery">
+    <h2 id="gallery-title">Наши глэмпинги</h2>
+    <div class="gallery-grid">
+      <img src="glamp1.jpg" alt="Glamp 1">
+      <img src="glamp2.jpg" alt="Glamp 2">
+      <img src="glamp3.jpg" alt="Glamp 3">
+      <img src="glamp4.jpg" alt="Glamp 4">
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Глэмпинги Алматы</p>
+  </footer>
+
+  <script>
+    const translations = {
+      ru: {
+        title: "Глэмпинги Алматы",
+        hero: "Добро пожаловать!",
+        book: "Забронировать сейчас",
+        gallery: "Наши глэмпинги"
+      },
+      kk: {
+        title: "Алматы Глэмпингтері",
+        hero: "Қош келдіңіз!",
+        book: "Қазір брондау",
+        gallery: "Біздің глэмпингтер"
+      },
+      en: {
+        title: "Glamping Almaty",
+        hero: "Welcome!",
+        book: "Book Now",
+        gallery: "Our Glampings"
+      }
+    };
+
+    function setLang(lang) {
+      document.getElementById("title").innerText = translations[lang].title;
+      document.getElementById("hero-text").innerText = translations[lang].hero;
+      document.getElementById("book-btn").innerText = translations[lang].book;
+      document.getElementById("gallery-title").innerText = translations[lang].gallery;
+    }
+  </script>
+</body>
+</html>
