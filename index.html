@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glamping Almaty</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="lang.js" defer></script>
+  <style>
+    body {margin:0;font-family:Arial, sans-serif;background:#f9f9f9;}
+    header {
+      position:fixed;top:0;width:100%;
+      background:rgba(0,0,0,0.7);color:#fff;
+      padding:15px 30px;display:flex;
+      justify-content:space-between;align-items:center;z-index:1000;
+    }
+    header nav a {color:#fff;margin:0 10px;text-decoration:none;font-weight:bold;}
+    .lang-switch {display:flex;gap:10px;}
+    .lang-switch button {border:none;background:none;cursor:pointer;font-size:20px;}
+    .hero {
+      height:100vh;display:flex;justify-content:center;align-items:center;flex-direction:column;
+      text-align:center;color:white;padding:0 20px;
+      background-size:cover;background-position:center;
+      transition: background-image 1s ease-in-out;
+    }
+    .hero h1 {font-size:3em;margin:0;text-shadow:2px 2px 6px black;}
+    .hero p {font-size:1.5em;margin:20px 0;}
+    .btn {
+      padding:15px 30px;background:linear-gradient(135deg,#ff7e5f,#feb47b);
+      color:#fff;text-decoration:none;border-radius:8px;font-weight:bold;transition:0.3s;
+    }
+    .btn:hover {background:linear-gradient(135deg,#feb47b,#ff7e5f);}
+    section {padding:60px 20px;max-width:1200px;margin:auto;}
+    .features {display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;text-align:center;}
+    .feature {background:white;padding:20px;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.1);}
+    .gallery {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px;}
+    .gallery img {width:100%;border-radius:10px;transition:0.3s;}
+    .gallery img:hover {transform:scale(1.05);}
+    footer {background:#222;color:#fff;text-align:center;padding:30px 15px;}
+    footer a {color:#ff7e5f;text-decoration:none;font-weight:bold;}
+  </style>
+</head>
+<body>
+
+  <header>
+    <div><b>Glamping Almaty</b></div>
+    <nav>
+      <a href="#features" data-key="menu-why">Почему мы</a>
+      <a href="#gallery" data-key="menu-gallery">Галерея</a>
+      <a href="#contact" data-key="menu-contacts">Контакты</a>
+    </nav>
+    <div class="lang-switch">
+      <button onclick="setLang('kk')">🇰🇿</button>
+      <button onclick="setLang('ru')">🇷🇺</button>
+      <button onclick="setLang('en')">🇬🇧</button>
+    </div>
+  </header>
+
+  <section class="hero" id="hero">
+    <h1 data-key="hero-title">Glamping Almaty</h1>
+    <p data-key="hero-subtitle">Отдых в гармонии с природой</p>
+    <a href="https://wa.me/77027352233" class="btn" data-key="book-btn">Забронировать сейчас</a>
+  </section>
+
+  <section id="features">
+    <h2 data-key="why-title">Почему выбирают нас?</h2>
+    <div class="features">
+      <div class="feature" data-key="f1">🗻 Красивейшие виды Алматы</div>
+      <div class="feature" data-key="f2">⛺ Комфорт в дикой природе</div>
+      <div class="feature" data-key="f3">🔥 Атмосфера у костра</div>
+      <div class="feature" data-key="f4">🚗 Удобный трансфер</div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h2 data-key="gallery-title">Галерея</h2>
+    <div class="gallery">
+      <img src="images/glamp1.jpg" alt="Glamping 1">
+      <img src="images/glamp2.jpg" alt="Glamping 2">
+      <img src="images/glamp3.jpg" alt="Glamping 3">
+      <img src="images/glamp4.jpg" alt="Glamping 4">
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 data-key="contacts-title">Контакты</h2>
+    <p><b>Adilkhan / Адильхан / Әділхан</b></p>
+    <p>Телефон: <a href="tel:+77027352233">+7 702 735 2233</a></p>
+    <p>WhatsApp: <a href="https://wa.me/77027352233">Написать в WhatsApp</a></p>
+  </section>
+
+  <footer>
+    © 2025 Glamping Almaty | <span data-key="footer">Сделано с любовью для туристов Казахстана</span>
+  </footer>
+
+  <script>
+    // Слайдер фона hero
+    const hero = document.getElementById('hero');
+    const backgrounds = [
+      'images/hero.jpg',
+      'images/glamp1.jpg',
+      'images/glamp2.jpg',
+      'images/glamp3.jpg'
+    ];
+    let i = 0;
+    setInterval(() => {
+      i = (i + 1) % backgrounds.length;
+      hero.style.backgroundImage = `url(${backgrounds[i]})`;
+    }, 5000);
+  </script>
+
+</body>
+</html>
