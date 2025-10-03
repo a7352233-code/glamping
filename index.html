@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glamping Almaty</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav button {
+      margin: 0 5px;
+      padding: 6px 12px;
+      border: none;
+      cursor: pointer;
+      background: #27ae60;
+      color: #fff;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    nav button:hover {
+      background: #1e8449;
+    }
+    .hero {
+      position: relative;
+      text-align: center;
+    }
+    .hero img {
+      width: 100%;
+      height: 80vh;
+      object-fit: cover;
+    }
+    .hero-text {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+    }
+    .hero-text h1 {
+      font-size: 3rem;
+      margin: 0 0 20px 0;
+    }
+    .hero-text button {
+      padding: 15px 25px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 8px;
+      background: #25d366; /* WhatsApp green */
+      color: #fff;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .hero-text button:hover {
+      background: #1ebe57;
+    }
+    .section {
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+    }
+    .section h2 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+      color: #2c3e50;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 15px;
+    }
+    .gallery-grid img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      background: #2c3e50;
+      color: #fff;
+      padding: 30px;
+      text-align: center;
+    }
+    footer p {
+      margin: 5px 0;
+    }
+    iframe {
+      border-radius: 10px;
+      margin-top: 20px;
+      width: 100%;
+      height: 300px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="title">Glamping Almaty</h1>
+    <nav>
+      <button onclick="setLang('ru')">Рус</button>
+      <button onclick="setLang('kk')">Қаз</button>
+      <button onclick="setLang('en')">Eng</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <img src="hero.jpg" alt="Hero Image">
+    <div class="hero-text">
+      <h1 id="hero-text">Добро пожаловать в глэмпинги Алматы</h1>
+      <button onclick="window.location.href='https://wa.me/77027352233'">
+        <span id="book-btn">Забронировать сейчас</span>
+      </button>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 id="about-title">О нас</h2>
+    <p id="about-text">
+      Наши глэмпинги в Алматы — это сочетание комфорта и природы. 
+      Уютные домики, свежий горный воздух и уникальная атмосфера делают отдых незабываемым. 
+      Здесь вы сможете насладиться красотой Казахстана и почувствовать единение с природой.
+    </p>
+  </section>
+
+  <section class="section gallery">
+    <h2 id="gallery-title">Наши глэмпинги</h2>
+    <div class="gallery-grid">
+      <img src="glamp1.jpg" alt="Glamp 1">
+      <img src="glamp2.jpg" alt="Glamp 2">
+      <img src="glamp3.jpg" alt="Glamp 3">
+      <img src="glamp4.jpg" alt="Glamp 4">
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 id="contact-title">Контакты</h2>
+    <p><strong>Adilkhan / Адильхан / Әділхан</strong></p>
+    <p>Телефон: +7 702 735 22 33</p>
+    <p>Email: info@glamping.kz</p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.89450421156!2d76.92861261550343!3d43.23894907913785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38836ef0a0e1a3b3%3A0xb7411f3a3e8ac8a4!2sAlmaty!5e0!3m2!1sen!2skz!4v1674300000000" allowfullscreen="" loading="lazy"></iframe>
+  </section>
+
+  <footer>
+    <p>© 2025 Glamping Almaty</p>
+    <p>Создано с ❤️ для туристов</p>
+  </footer>
+
+  <script>
+    const translations = {
+      ru: {
+        title: "Глэмпинги Алматы",
+        hero: "Добро пожаловать в глэмпинги Алматы",
+        book: "Забронировать сейчас",
+        about: "Наши глэмпинги в Алматы — это сочетание комфорта и природы. Уютные домики, свежий горный воздух и уникальная атмосфера делают отдых незабываемым.",
+        gallery: "Наши глэмпинги",
+        contact: "Контакты"
+      },
+      kk: {
+        title: "Алматы глэмпингтері",
+        hero: "Алматы глэмпингтеріне қош келдіңіз",
+        book: "Қазір брондау",
+        about: "Алматыдағы глэмпингтеріміз — жайлылық пен табиғаттың үйлесімі. Жайлы үйлер, таудың таза ауасы және ерекше атмосфера сіздің демалысыңызды ұмытылмас етеді.",
+        gallery: "Біздің глэмпингтер",
+        contact: "Байланыс"
+      },
+      en: {
+        title: "Glamping Almaty",
+        hero: "Welcome to Glamping Almaty",
+        book: "Book Now",
+        about: "Our glampings in Almaty combine comfort and nature. Cozy houses, fresh mountain air and a unique atmosphere will make your stay unforgettable.",
+        gallery: "Our Glampings",
+        contact: "Contacts"
+      }
+    };
+
+    function setLang(lang) {
+      document.getElementById("title").innerText = translations[lang].title;
+      document.getElementById("hero-text").innerText = translations[lang].hero;
+      document.getElementById("book-btn").innerText = translations[lang].book;
+      document.getElementById("about-title").innerText = (lang === 'ru') ? "О нас" : (lang === 'kk') ? "Біз туралы" : "About Us";
+      document.getElementById("about-text").innerText = translations[lang].about;
+      document.getElementById("gallery-title").innerText = translations[lang].gallery;
+      document.getElementById("contact-title").innerText = translations[lang].contact;
+    }
+  </script>
+</body>
+</html>
